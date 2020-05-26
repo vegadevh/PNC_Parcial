@@ -1,0 +1,54 @@
+:root {
+    font-size: calc(0.5em + 1vh); 
+}
+
+body {
+    background-color: #f3fff2;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+h1, .regresar{
+    font-family: 'Roboto', sans-serif;
+}
+
+.formulario{
+    margin: 4em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    background-color: white;
+    border-radius: 1em;
+}
+
+.regresar{
+    padding-left: 4em;
+    padding-right: 4em;
+
+}
+
+form{
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+form label {
+    font-family: 'Roboto', sans-serif;
+}
+
+.agregar{
+    border-radius: 1em;
+}
+
+.envio{
+    display: grid;
+    justify-content: center;
+}
+
+.robot{
+    font-family: 'Roboto', sans-serif;
+    
+}
