@@ -56,6 +56,7 @@ public class MainController {
 		}else {
 			categoriaService.insert(categoria);
 			categoria = new Categoria();
+			mav.addObject("CategoriaI", "Categoria guardado con exito");
 			mav.setViewName("index");
 		}
 		return mav;
@@ -88,6 +89,7 @@ public class MainController {
 		}else {
 			libroService.insert(libro);
 			libro = new Libro();
+			mav.addObject("LibroI", "Libro guardado con exito");
 			mav.setViewName("index");
 		}
 		return mav;
