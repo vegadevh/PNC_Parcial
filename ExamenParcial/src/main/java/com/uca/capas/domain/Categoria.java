@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(schema="public", name="cat_categoria")
@@ -17,6 +19,8 @@ public class Categoria {
 	private Integer c_categoria;
 	
 	@Column(name="s_categoria")
+	@NotEmpty(message="El campo Nombre Categoria no puede estar vacio")
+	@Size(message="El campo sobrepasa la cantidad de 50 caracteres", max=50)
 	private String s_categoria;
 	
 	public Categoria() {
