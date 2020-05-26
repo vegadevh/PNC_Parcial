@@ -1,5 +1,6 @@
 package com.uca.capas.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -123,8 +124,9 @@ public class Libro {
 		this.c_categoria = c_categoria;
 	}
 
-	public Date getF_ingreso() {
-		return f_ingreso;
+	public String getF_ingreso() {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+		return formatter.format(f_ingreso);
 	}
 
 	public void setF_ingreso(Date f_ingreso) {

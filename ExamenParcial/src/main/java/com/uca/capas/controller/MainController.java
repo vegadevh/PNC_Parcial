@@ -92,4 +92,16 @@ public class MainController {
 		}
 		return mav;
 	}
+	
+	//Ver Libros
+	@RequestMapping("/listado")
+	public ModelAndView listado() {
+		ModelAndView mav = new ModelAndView();
+		List<Libro> libros = libroService.findAll();
+		
+		mav.addObject("libros", libros);
+		mav.setViewName("listado");
+		return mav;
+	}
+	
 }
