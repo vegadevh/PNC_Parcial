@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -39,7 +39,7 @@ public class Libro {
 	@Column(name="s_autor")
 	private String s_autor;
 	
-	@OneToMany(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="c_categoria")
 	private Categoria categoria;
 	
@@ -60,6 +60,18 @@ public class Libro {
 	@Column(name="s_isbn")
 	private String s_isbn;
 	
+	public Boolean getB_estado() {
+		return b_estado;
+	}
+	public void setB_estado(Boolean b_estado) {
+		this.b_estado = b_estado;
+	}
+	public String getS_isbn() {
+		return s_isbn;
+	}
+	public void setS_isbn(String s_isbn) {
+		this.s_isbn = s_isbn;
+	}
 	public Libro() {
 		
 	}
@@ -67,7 +79,7 @@ public class Libro {
 	public String getEstadoDelegate() {
 		if(this.b_estado==null) return "";
 		else {
-			return b_estado == true ? "Activo":"Inactivo";
+			return b_estado == true ? "Disponible":"No Disponible";
 		}
 	}
 

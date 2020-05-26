@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/validarCategoria}" th:object="${categoria}" method="POST">
+
+        <label for="nombre">Nombre Categoria: </label>
+        <input type="text" name="nombre" id="nombre" th:field="*{s_categoria}">
+        <br>
+        <span th:errors="*{s_categoria}" style="color: red;"></span>
+
+        <input type="submit" value="Guardar Categoria">
+    </form>
+</body>
+</html>
